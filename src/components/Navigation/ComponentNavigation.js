@@ -1,39 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./component.navigation.style.css";
-import { Menu, MenuProps } from "antd";
-
-const items: MenuProps["items"] = [
-  {
-    label: <Link to="/">Home</Link>,
-    key: "home",
-  },
-  {
-    label: <Link to="/about">About</Link>,
-    key: "about",
-  },
-  {
-    label: "Contact",
-    key: "contact",
-  },
-];
 
 export default function ComponentNavigation() {
-  const [current, setCurrent] = React.useState("home");
-
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-    setCurrent(e.key);
-  };
-
   return (
     <div>
-      <Menu
-        onClick={onClick}
-        selectedKeys={[current]}
-        mode="horizontal"
-        items={items}
-      />
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to={"/"}>
+            Navbar
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to={"/"}>
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/"}>
+                  Features
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }

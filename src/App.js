@@ -1,8 +1,7 @@
 import Route from "./route/index";
 import ComponentNaavigation from "./components/Navigation/ComponentNavigation.js";
-import "../node_modules/antd/dist/antd.css";
-import "../node_modules/antd/dist/antd.less";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap";
 
 function App() {
   return (
